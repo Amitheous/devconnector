@@ -1,3 +1,3 @@
-#Devconnector is a small social network
+# Devconnector is a small social network
 
 ### Built following Brad Traversy's Udemy course
