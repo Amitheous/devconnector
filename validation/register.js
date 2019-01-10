@@ -28,10 +28,10 @@ module.exports = function validateRegisterInput(data) {
   if (Validator.isEmpty(data.password)) {
     errors.password = 'password is invalid';
   }
-  if (!Validator.isLength(data.password), {
+  if (!Validator.isLength(data.password, {
       min: 6,
       max: 40
-    }) {
+    })) {
     errors.password = 'Password must be at least 6 characters';
   }
   if (Validator.isEmpty(data.password2)) {
