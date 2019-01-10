@@ -23,8 +23,8 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({
-      user: req.user.id
-    })
+        user: req.user.id
+      })
       .populate("user", ["name", "avatar"])
       .then(profile => {
         if (!profile) {
@@ -65,8 +65,8 @@ router.get("/all", (req, res) => {
 router.get("/handle/:handle", (req, res) => {
   const errors = {};
   Profile.findOne({
-    handle: req.params.handle
-  })
+      handle: req.params.handle
+    })
     .populate("user", ["name", "avatar"])
     .then(profile => {
       if (!profile) {
@@ -86,8 +86,8 @@ router.get("/handle/:handle", (req, res) => {
 router.get("/user/:user_id", (req, res) => {
   const errors = {};
   Profile.findOne({
-    user: req.params.user_id
-  })
+      user: req.params.user_id
+    })
     .populate("user", ["name", "avatar"])
     .then(profile => {
       if (!profile) {
@@ -113,7 +113,10 @@ router.post(
     session: false
   }),
   (req, res) => {
-    const { errors, isValid } = validateProfileInput(req.body);
+    const {
+      errors,
+      isValid
+    } = validateProfileInput(req.body);
 
     // Check Validation
     if (!isValid) {
@@ -147,17 +150,13 @@ router.post(
     }).then(profile => {
       if (profile) {
         // Update
-        Profile.findOneAndUpdate(
-          {
-            user: req.user.id
-          },
-          {
-            $set: profileFields
-          },
-          {
-            new: true
-          }
-        ).then(profile => res.json(profile));
+        Profile.findOneAndUpdate({
+          user: req.user.id
+        }, {
+          $set: profileFields
+        }, {
+          new: true
+        }).then(profile => res.json(profile));
       } else {
         // Create new
         // Check if handle exists
@@ -186,7 +185,10 @@ router.post(
     session: false
   }),
   (req, res) => {
-    const { errors, isValid } = validateExperienceInput(req.body);
+    const {
+      errors,
+      isValid
+    } = validateExperienceInput(req.body);
 
     // Check Validation
     if (!isValid) {
@@ -227,7 +229,10 @@ router.post(
     session: false
   }),
   (req, res) => {
-    const { errors, isValid } = validateEducationInput(req.body);
+    const {
+      errors,
+      isValid
+    } = validateEducationInput(req.body);
 
     // Check Validation
     if (!isValid) {
@@ -269,8 +274,8 @@ router.delete(
   }),
   (req, res) => {
     Profile.findOne({
-      user: req.user.id
-    })
+        user: req.user.id
+      })
       .then(profile => {
         // Get remove index
         const removeIndex = profile.experience
@@ -287,7 +292,7 @@ router.delete(
   }
 );
 
-// @route   DELETE api/profiles/education/:exp_id
+// @route   DELETE api/profiles/education/:edu_id
 // @desc    Delete education from profile
 // @access  Private
 router.delete(
@@ -297,8 +302,8 @@ router.delete(
   }),
   (req, res) => {
     Profile.findOne({
-      user: req.user.id
-    })
+        user: req.user.id
+      })
       .then(profile => {
         // Get remove index
         const removeIndex = profile.education
@@ -324,9 +329,15 @@ router.delete(
     session: false
   }),
   (req, res) => {
-    Profile.findOneAndRemove({ user: req.user.id }).then(() => {
-      User.findOneAndRemove({ _id: req.user.id }).then(() =>
-        res.json({ success: "true" })
+    Profile.findOneAndRemove({
+      user: req.user.id
+    }).then(() => {
+      User.findOneAndRemove({
+        _id: req.user.id
+      }).then(() =>
+        res.json({
+          success: "true"
+        })
       );
     });
   }
