@@ -42,6 +42,11 @@ class AppNavbar extends React.Component {
     const authLinks = (
       <Nav className="ml-auto" navbar>
         <NavItem>
+          <NavLink tag={RouteLink} exact to="/dashboard">
+            Dashboard
+          </NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink
             tag={RouteLink}
             exact
