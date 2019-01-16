@@ -138,6 +138,9 @@ class CreateProfile extends Component {
                 Let's get some information to make you profile stand out
               </p>
               <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-3">
+                Remember to include http:// or https:// in all links
+              </small>
               <Form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"

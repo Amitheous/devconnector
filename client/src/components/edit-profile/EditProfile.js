@@ -210,7 +210,10 @@ class EditProfile extends Component {
               <p className="lead text-center">
                 Let's get some information to make you profile stand out
               </p>
-              <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-1">* = required fields</small>
+              <small className="d-block pb-3">
+                Remember to include http:// or https:// in all links
+              </small>
               <Form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
