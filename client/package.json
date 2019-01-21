@@ -1,38 +1,40 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "availity-reactstrap-validation": "^2.5.0",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.2.1",
-    "classnames": "^2.2.6",
-    "jwt-decode": "^2.2.0",
-    "moment": "^2.22.0",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-moment": "^0.7.0",
-    "react-redux": "*",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "reactstrap": "^7.0.2",
-    "redux": "*",
-    "redux-thunk": "*"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "proxy": "http://localhost:5000",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+	"name": "client",
+	"version": "0.1.0",
+	"engines": {
+		"npm": "6.4.1"
+	},
+	"dependencies": {
+		"availity-reactstrap-validation": "^2.5.0",
+		"axios": "^0.18.0",
+		"bootstrap": "^4.2.1",
+		"classnames": "^2.2.6",
+		"jwt-decode": "^2.2.0",
+		"moment": "^2.22.0",
+		"react": "^16.3.1",
+		"react-dom": "^16.3.1",
+		"react-moment": "^0.7.0",
+		"react-redux": "*",
+		"react-router-dom": "^4.2.2",
+		"react-scripts": "1.1.4",
+		"reactstrap": "^7.0.2",
+		"redux": "*",
+		"redux-thunk": "*"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"proxy": "http://localhost:5000",
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	]
 }
